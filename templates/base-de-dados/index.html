@@ -1,1 +1,12 @@
-{% extends '/base-de-dados/layout.html' %}
+{% extends '/base-de-dados/layout.html' %} {% block content %}
+<div class="flex flex-col justify-center items-center">
+  <h2 class="text-2xl">Gráfico</h2>
+  <div id="chart"></div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script
+  src="{{url_for('static', filename='js/index.js')}}"
+  type="module"
+></script>
+{% endblock %}

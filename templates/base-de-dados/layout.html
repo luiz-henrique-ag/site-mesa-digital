@@ -6,16 +6,174 @@
     <title>Base de Dados | Mesa Digital</title>
     {% include 'css-links.html' %}
   </head>
-  <body class="grid grid-cols-12 h-screen">
-    <header class="col-span-2 bg-background_dados text-texto_dados h-full">
-      <ul class="flex flex-col gap-4 list-none">
-        <li>Sobre</li>
-        <li>Equipe</li>
-        <li>Publicações</li>
-      </ul>
-      <div>Temas Pesquisados</div>
-      <ul></ul>
+  <body class="h-screen">
+    <header class="w-full grid grid-cols-12 items-center border-gray-200 h-12">
+      <div class="bg-white col-span-2 w-40 py-2 mx-auto">
+        <a href="/">
+          <img
+            src="{{url_for('static', filename='assets/logo.jpg')}}"
+            alt="Logo Mesa Digital"
+          />
+        </a>
+      </div>
+      <div class="col-span-10 h-full flex justify-between">
+        <button class="border border-x-gray-200 stroke-gray-200 h-full px-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-align-justify"
+          >
+            <line x1="3" x2="21" y1="6" y2="6" />
+            <line x1="3" x2="21" y1="12" y2="12" />
+            <line x1="3" x2="21" y1="18" y2="18" />
+          </svg>
+        </button>
+        <div class="h-full flex">
+          <button class="h-full px-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-heart"
+            >
+              <path
+                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+              />
+            </svg>
+          </button>
+          <button class="h-full px-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-plus"
+            >
+              <path d="M5 12h14" />
+              <path d="M12 5v14" />
+            </svg>
+          </button>
+          <button class="h-full px-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-share-2"
+            >
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" x2="15.42" y1="13.51" y2="17.49" />
+              <line x1="15.41" x2="8.59" y1="6.51" y2="10.49" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
-    <main class="col-span-10"></main>
+    <main class="grid grid-cols-12 h-full">
+      <aside
+        class="col-span-2 text-texto_dados h-full bg-background_dados py-4"
+      >
+        <div class="flex flex-col gap-5">
+          <ul class="flex flex-col gap-5 list-none">
+            <li
+              class="flex flex-row gap-6 hover:text-gray-100 hover:stroke-gray-100 cursor-pointer px-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-circle-alert"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" x2="12" y1="8" y2="12" />
+                <line x1="12" x2="12.01" y1="16" y2="16" />
+              </svg>
+              Sobre
+            </li>
+            <li
+              class="flex flex-row gap-6 hover:text-gray-100 hover:stroke-gray-100 cursor-pointer px-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-users"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+              Equipe
+            </li>
+            <li
+              class="flex flex-row gap-6 hover:text-gray-100 hover:stroke-gray-100 cursor-pointer px-6"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-book-text"
+              >
+                <path
+                  d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
+                />
+                <path d="M8 11h8" />
+                <path d="M8 7h6" />
+              </svg>
+              Publicações
+            </li>
+          </ul>
+          <div class="px-3">Temas Pesquisados</div>
+          <ul></ul>
+        </div>
+      </aside>
+      <div class="col-span-10">{% block content %} {% endblock %}</div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    {% block scripts %} {% endblock %}
   </body>
 </html>

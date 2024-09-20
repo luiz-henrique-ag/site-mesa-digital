@@ -1,11 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask
+from routes import routes_bp
+from routes_base_dados import routes_base_dados_bp
 
 app = Flask(__name__, template_folder='./templates')
 
-@app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/base-de-dados')
-def dados():
-    return render_template('base-de-dados/index.html')
+app.register_blueprint(routes_bp)
+app.register_blueprint(routes_base_dados_bp)
